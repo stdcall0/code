@@ -1,4 +1,30 @@
 {
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontSize": 16.8,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "c": "cd $dir ; gcc \"$fileName\" -o \"$workspaceRoot\\a\" -Wall -std=c11 -g ; if ($?) { .\"$workspaceRoot\\a\" }",
+        "cpp": "cd $dir ; g++ \"$fileName\" -o \"$workspaceRoot\\a\" -Wall -std=c++14 -g ; if ($?) { .\"$workspaceRoot\\a\" }"
+    },
+    "code-runner.clearPreviousOutput": false,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.ignoreSelection": true,
+    "code-runner.preserveFocus": false,
+    "workbench.colorTheme": "Winter is Coming (Dark Black - No Italics)",
+    "editor.fontFamily": "'Cascadia Mono PL', 'Ubuntu Mono', Consolas, 'Microsoft Yahei'",
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/*.exe": true,
+        "**/a": true
+    },
+    "explorer.confirmDelete": false,
+    "python.languageServer": "Jedi",
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "sync.gist": "6438e2b3341434e7ef26cd6c7e3a28c7",
+    "editor.minimap.scale": 3,
+    "window.zoomLevel": 1,
+    "http.proxy": "http://127.0.0.1:7890",
+    "editor.tabSize": 2,
     "files.associations": {
         "typeinfo": "cpp",
         "any": "cpp",
@@ -76,6 +102,5 @@
         "variant": "cpp",
         "ccomplex": "cpp"
     },
-    "python.pythonPath": "/usr/bin/python3",
     "C_Cpp.errorSquiggles": "Enabled"
 }
