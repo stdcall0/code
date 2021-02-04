@@ -20,7 +20,7 @@
     "explorer.confirmDelete": false,
     "python.languageServer": "Jedi",
     "files.defaultLanguage": "${activeEditorLanguage}",
-    "sync.gist": "6438e2b3341434e7ef26cd6c7e3a28c7",
+    "sync.gist": "a71982b19214ce7915d426285279c0a3",
     "editor.minimap.scale": 3,
     "window.zoomLevel": 1,
     "http.proxy": "http://127.0.0.1:7890",
