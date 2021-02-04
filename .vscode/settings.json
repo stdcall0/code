@@ -20,12 +20,12 @@
     "explorer.confirmDelete": false,
     "python.languageServer": "Jedi",
     "files.defaultLanguage": "${activeEditorLanguage}",
-    "sync.gist": "a71982b19214ce7915d426285279c0a3",
     "editor.minimap.scale": 3,
     "window.zoomLevel": 1,
     "http.proxy": "http://127.0.0.1:7890",
     "editor.tabSize": 2,
     "files.associations": {
+        "*.txt": "plaintext",
         "typeinfo": "cpp",
         "any": "cpp",
         "array": "cpp",
@@ -102,5 +102,6 @@
         "variant": "cpp",
         "ccomplex": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Enabled"
+    "C_Cpp.errorSquiggles": "Enabled",
+    "sync.gist": "6438e2b3341434e7ef26cd6c7e3a28c7",
 }

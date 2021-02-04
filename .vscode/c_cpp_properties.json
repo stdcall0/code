@@ -3,14 +3,13 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "${workspaceFolder}\\..\\mingw\\bin\\g++.exe",
+            "compilerPath": "D:\\workspace\\mingw\\bin\\g++.exe",
             "cStandard": "gnu11",
             "cppStandard": "c++11",
             "intelliSenseMode": "gcc-x64"
