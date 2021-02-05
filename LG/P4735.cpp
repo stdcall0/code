@@ -11,7 +11,7 @@ namespace Trie {
   int ac, rc;
   struct node {
     int dep, s[2], lst;
-  } pool[N * 31 + 5];
+  } pool[(int)3e7 + 5];
 
   inline int clone(int x) { pool[++ac] = pool[x]; return ac; }
 
@@ -38,7 +38,6 @@ namespace Trie {
         x = pool[x].s[w];
         res |= 1;
       } else {
-        assert(pool[x].s[q]);
         x = pool[x].s[q];
       }
       v >>= 1;
@@ -50,7 +49,7 @@ namespace Trie {
     int root;
     inline void ins(int);
     inline int qry(int v, int L) { return query(root, v, L); }
-  } rev[N], *c;
+  } rev[N * 4], *c;
 
   inline void revision::ins(int x) {
     ++rc; rev[rc] = {insert(root, x, rc-1)};
@@ -83,21 +82,24 @@ namespace Utils {
 };
 
 int main() {
-  int m, _[N]={0}; cin >> n >> m;
-  Trie::b(); depth = 30;
+  int m, _(0);
+  cin >> n >> m;
+  depth = 30;
+  Trie::b();
+  Trie::c->ins(0);
   for (int x,i=1; i<=n; i++) {
-    cin >> x; _[i] = _[i-1] ^ x;
-    Trie::c->ins(Utils::rev(_[i]));
+    cin >> x;
+    Trie::c->ins(Utils::rev(_ ^= x));
   }
-  int l, r, x, C=n;
+  int l, r, x;
   for (char O[5]; m--; ) {
     cin >> O;
     if (O[0] == 'A') {
-      cin >> x; ++C; _[C] = _[C-1] ^ x;
-      Trie::c->ins(Utils::rev(_[C]));
+      cin >> x;
+      Trie::c->ins(Utils::rev(_ ^= x));
     } else {
       cin >> l >> r >> x;
-      cout << Trie::rev[r].qry(Utils::rev(_[r] ^ x), l-1) << endl;
+      cout << Trie::rev[r+1].qry(Utils::rev(_ ^ x), l) << endl;
     }
   }
   return 0;
