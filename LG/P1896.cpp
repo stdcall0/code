@@ -1,4 +1,3 @@
-/// @tags: template
 #include <bits/stdc++.h>
 using namespace std;
 // #define NDEBUG
@@ -9,7 +8,7 @@ using namespace std;
 auto _r0 = ([]{ return ios :: sync_with_stdio(0), 0; })();
 
 typedef long long ll;
-const int N = 1e5 + 5, M = 2e5 + 5;
+const int N = 10, M = 2e5 + 5;
 int n;
 
 namespace U {
