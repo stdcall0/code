@@ -8,7 +8,7 @@ using namespace std;
 auto _r0 = ([]{ return ios :: sync_with_stdio(0), 0; })();
 
 typedef long long ll;
-const int N = 5e5 + 5;
+const int N = 3e5 + 5;
 const int POOL = N * 24;
 int n, T[N];
 
