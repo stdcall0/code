@@ -9,8 +9,8 @@ auto _r0 = ([]{ return ios :: sync_with_stdio(0), 0; })();
 
 typedef long long ll;
 const int N = 13, STA = (1 << N + 1) + 5;
-int n, k;
-ll f[N][STA][N]; // rowId currentRow placedCount
+int n, m, a[N][N];
+ll f[N][STA]; // rowId currentRow placedCount
 
 namespace U {
   inline ll retR() {
@@ -28,47 +28,42 @@ inline int countOne(int x) {
   for (; x; x >>= 1) res += x & 1;
   return res;
 }
-inline bool motherfucking(int s) {
-  for (int i=1; i<=n; i++) {
+inline bool motherfucking(int s, int e) {
+  for (int i=1; i<=m; i++) {
     if (s & (1 << i-1)) {
+      if (!a[e][i]) return true;
       if (s & (1 << i)) return true;
     }
   }
   return false;
 }
 inline bool canPlace(int ls, int cs) {
-  for (int i=1; i<=n; i++) {
-    if (cs & (1 << i-1)) {
-      if (ls & (1 << i-1)) return false;
-      if (ls & (1 << i)) return false;
-      if (i > 1 && ls & (1 << i-2)) return false;
+  for (int i=1; i<=m; i++) {
+    if (cs & (1 << i-1) && ls & (1 << i-1)) {
+      return false;
     }
   }
   return true;
 }
 
 int main() {
-  n = R(); k = R();
-  int S = 1 << n;
-  f[0][0][0] = 1;
+  n = R(); m = R();
+  int S = 1 << m;
+  f[0][0] = 1;
+  for (int i=1; i<=n; i++) for (int j=1; j<=m; j++) a[i][j] = R();
   for (int row=1; row<=n+1; ++row) {
-    for (int placed=0; placed<=k; ++placed) {
-      for (int s=0; s<S; ++s) {
-        int remaining = placed - countOne(s);
-        if (remaining < 0) continue;
-        if (motherfucking(s)) continue;
+    for (int s=0; s<S; ++s) {
+      if (motherfucking(s, row)) continue;
 
-        ll &F = f[row][s][placed];
-        for (int l=0; l<S; ++l) {
-          if (motherfucking(l)) continue;
-          if (canPlace(l, s) && remaining - countOne(l) >= 0) {
-            // printf("FROM: %d %d %d   TO: %d %d %d\n", row - 1, l, remaining, row, s, placed);
-            F += f[row - 1][l][remaining];
-          }
+      ll &F = f[row][s];
+      for (int l=0; l<S; ++l) {
+        if (motherfucking(l, row-1)) continue;
+        if (canPlace(l, s)) {
+          (F += f[row - 1][l]) %= 100000000ll;
         }
       }
     }
   }
-  cout << f[n+1][0][k] << endl;
+  cout << f[n+1][0] << endl;
   return 0;
 }
