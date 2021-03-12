@@ -1,10 +1,10 @@
-/// @tags: template
 #include <bits/stdc++.h>
 using namespace std;
 
 #define Rn(a, n) a + 1, a + n + 1
 typedef long long ll;
-const int N = 1e5 + 5, M = 2e5 + 5;
+typedef unsigned long long ull;
+const int N = 1e5 + 5;
 
 namespace U {
   inline ll retR() {
