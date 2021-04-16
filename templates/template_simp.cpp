@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 #define Rn(a, n) a + 1, a + n + 1
+#define Edge(T, x, y) T[x].push_back(y); T[y].push_back(x) //; printf("Edge #%s: %d - %d\n", #T, x, y)
 typedef long long ll;
 typedef unsigned long long ull;
 inline ll R() {
