@@ -31,7 +31,7 @@
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
         "c": "cd $dir ; clang \"$fileName\" --target=x86_64-w64-mingw32 -o \"$workspaceRoot\\a.exe\" -Wall -std=c11 -g ; if ($?) { & \"$workspaceRoot\\a.exe\" }",
-        "cpp": "cd $dir ; clang++ \"$fileName\" --target=x86_64-w64-mingw32 -o \"$workspaceRoot\\a.exe\" -Wall -std=c++14 -g ; if ($?) { & \"$workspaceRoot\\a.exe\" }"
+        "cpp": "cd $dir ; clang++ \"$fileName\" --target=x86_64-w64-mingw32 -o \"$workspaceRoot\\a.exe\" -Wall -std=c++17 -g ; if ($?) { & \"$workspaceRoot\\a.exe\" }"
     },
     "files.associations": {
         "*.txt": "plaintext"
