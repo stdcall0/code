@@ -31,7 +31,7 @@
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
         "c": "cd $dir ; clang \"$fileName\" --target=x86_64-w64-mingw32 -o \"$workspaceRoot\\a.exe\" -Wall -std=c11 -g ; if ($?) { & \"$workspaceRoot\\a.exe\" }",
-        "cpp": "cd $dir ; clang++ \"$fileName\" --target=x86_64-w64-mingw32 -o \"$workspaceRoot\\a.exe\" -Wall -std=c++17 -g ; if ($?) { & \"$workspaceRoot\\a.exe\" }"
+        "cpp": "cd $dir ; clang++ \"$fileName\" --target=x86_64-w64-mingw32 -o \"$workspaceRoot\\a.exe\" -Wall -std=c++20 -g ; if ($?) { & \"$workspaceRoot\\a.exe\" }"
     },
     "files.associations": {
         "*.txt": "plaintext"
@@ -42,9 +42,7 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    "http.proxyStrictSSL": false,
     "window.zoomLevel": 1,
-    "http.proxy": "http://127.0.0.1:7890",
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
     "files.defaultLanguage": "${activeEditorLanguage}",
     "sync.gist": "a71982b19214ce7915d426285279c0a3",
@@ -58,18 +56,28 @@
         "**/a": true
     },
     "python.languageServer": "Jedi",
-    "C_Cpp.updateChannel": "Insiders",
     "C_Cpp.intelliSenseEngine": "Disabled",
+    "clangd.semanticHighlighting": true,
+    "clangd.serverCompletionRanking": true,
     "clangd.arguments": [
         "--clang-tidy",
         "--pch-storage=memory",
         "--enable-config",
-        "--header-insertion=never"
+        "--header-insertion=never",
+        "-pretty",
+        "-log=verbose",
+        "--background-index"
     ],
-    "python.showStartPage": false,
+    "clangd.fallbackFlags": [
+        "-std=c++20"
+    ],
     "code-runner.languageIdToFileExtensionMap": {
         "bat": ".bat",
         "powershell": ".ps1",
         "typescript": ".ts"
-    }
+    },
+    "http.proxyStrictSSL": false,
+    "http.proxy": "http://127.0.0.1:7890",
+    "C_Cpp.updateChannel": "Insiders",
+    "python.showStartPage": false
 }
