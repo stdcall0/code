@@ -1,8 +1,8 @@
 # Config file for clangd
 # Put in Appdata/Local/clangd/
 CompileFlags:
-  Add: [--target=x86_64-w64-mingw32 -std=c++20 -Wall -Winfinite-recursion]
+  Add: [-Wall -Winfinite-recursion]
 Diagnostics:
   Suppress: [-Wc*-extensions]
   ClangTidy:
-    Add: [bugprone* , performance*, concurrency*, cppcoreguidelines*, modernize*, misc*]
+    Add: [bugprone* , performance*, misc*]
