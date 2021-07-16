@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Cascadia Mono PL', Dank Mono, Fira Code, Inconsolata, Consolas, 'Microsoft Yahei'",
+    "editor.fontFamily": "'Cascadia Code PL', 'Cascadia Mono PL', Dank Mono, Fira Code, Inconsolata, Consolas, 'Microsoft Yahei'",
     "editor.fontSize": 16,
     "editor.autoIndent": "full",
     "editor.cursorBlinking": "solid",
