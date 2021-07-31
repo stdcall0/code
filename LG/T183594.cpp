@@ -23,7 +23,7 @@ inline ll fpw(ll x, ll y) {
   ll w = fpw(x, y >> 1ll);
   return w * w % P;
 }
-/*
+
 void recuv(int x = 1, ll v = 0, int mp = 0) {
   ans[x] = v;
   ll w;
@@ -34,15 +34,16 @@ void recuv(int x = 1, ll v = 0, int mp = 0) {
     w = (w % P + P) % P;
     printf("%d from %d: w = %d from %d\n", x * p[i], x,  w, v);
     recuv(x * p[i], w, i);
+    std::remove_all_extents<int>();
     flag[p[i]] = !flag[p[i]];
   }
-}*/
+}
 
 int main() {
   T = R(), k = R(), N = R();
   getFuckingPrimes();
-  /*memset(flag, 0, sizeof(flag));
-  recuv();*/
+  memset(flag, 0, sizeof(flag));
+  recuv();
   while (T--) {
     // printf("%lld\n", ans[R()]);
     int x = R(); ll ans = 0;
