@@ -13,7 +13,6 @@ void getPref(const string& s) {
     while (j>0 && s[i] != s[j]) j = p[j-1];
     p[i] = j + (s[i] == s[j]);
   }
-  
 }
 
 int main() { ios::sync_with_stdio(0);
