@@ -1,8 +1,0 @@
-# Config file for clangd
-# Put in Appdata/Local/clangd/
-CompileFlags:
-  Add: [-Wall -Winfinite-recursion]
-Diagnostics:
-  Suppress: [-Wc*-extensions]
-  ClangTidy:
-    Add: [bugprone* , performance*, misc*]
