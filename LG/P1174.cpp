@@ -12,7 +12,7 @@ inline void nmsl(int &v, int x, int y) {
 }
 
 int main() {
-  scanf("%d%d%d", &n,&m,&k);
+  scanf("%d%d%d", &n,&m,&k); --k;
   for (int i=1; i<=n; ++i) {
     for (int j=1; j<=m; ++j) {
       static char b[5];
@@ -30,16 +30,14 @@ int main() {
       c = !c;
       for (int l=0; l<=k; ++l) {
         f[c][l][0] = max(f[!c][l][0], f[!c][l][1]);
-        if (k>=nmss-4 && l==0 && !w[j][i]) f[c][l][1] = -1;
-        else {
-          f[c][l][1] = -1;
-          if (l+w[j][i] <= k) nms(f[c][l][1],f[!c][l+w[j][i]][1],v[j][i]);
-          else f[c][l][1] = -1;
-          if (j==n && l+w[j][i] <= k) nmsl(f[c][l][1], f[!c][l+w[j][i]][0],v[j][i]);
-        }
+        f[c][l][1] = -1;
+        if (l+w[j][i] <= k) nms(f[c][l][1],f[!c][l+w[j][i]][1],v[j][i]);
+        else f[c][l][1] = -1;
+        if (j==n && l+w[j][i] <= k) nmsl(f[c][l][1], f[!c][l+w[j][i]][0],v[j][i]);
+        printf("col %d lin %d [%d, %d]\n", i,j, f[c][l][0], f[c][l][1]);
       }
     }
   }
-  printf("%d\n", max(f[c][0][0], f[c][0][1]));
+  printf("%d\n", max(f[c][0][0], f[c][0][1]) + 1);
   return 0;
 }
